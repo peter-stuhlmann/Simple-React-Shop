@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './assets/scss/style.scss';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Products from './components/Products';
 import ShoppingCart from './components/ShoppingCart';
 import LegalNotice from './components/LegalNotice';
@@ -23,6 +24,9 @@ export default class App extends Component {
           <Route path="/privacypolicy" component={ PrivacyPolicy } />
           <Route component={ NotFound } />
         </Switch>
+
+        <Footer />
+
       </Router>
     );
   }
