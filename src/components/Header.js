@@ -6,8 +6,10 @@ export default class Header extends Component {
     return (
       <React.Fragment>
         <header>
-          <span className="shop-title">Simple React Shop</span>
-          <MainNavigation />
+          <section>
+            <span className="shop-title">Simple React Shop</span>
+            <MainNavigation />
+          </section>
         </header>
       </React.Fragment>
     );
