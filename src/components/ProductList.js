@@ -2,6 +2,16 @@ import React, { Component } from 'react'
 
 export default class ProductList extends Component {
 
+  selectProductAmount = (stock) => {
+    let productStock = []
+
+    // Outer loop to create parent
+    for (let i = 0; i <= stock; i++) {
+      productStock.push(<option value={i}>{i}</option>)
+    }
+    return productStock
+  }
+
   render() {
     return (
       <ul className="product-list">
@@ -9,10 +19,13 @@ export default class ProductList extends Component {
           item => (
             <li key={item.id} className="product-item">
               <span className="product-title">{item.title}</span>
+              <div className="product-preview"><img src={item.preview} /></div>
               <p className="product-description">{item.description}</p>
-              <span className="product-price">{item.price}</span><br />
-              <input min="0" type="number"></input>
-              <button type="button" className="submit" id={item.id} aria-label="Submit" onClick={this.props.handleClick}>Add to cart</button>
+              <span className="product-price">€ {item.price}</span><br />
+              <select>
+                {this.selectProductAmount(item.stock)}
+              </select>
+              <button type="button" className="submit" id={item.id} aria-label="Submit" onClick={this.props.handleClick}><span className="fas fa-cart-plus">&nbsp;</span>Add to cart</button>
             </li >
           )
         )}
