@@ -1,0 +1,26 @@
+[
+   {
+       "title": "Product #1",
+       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+       "id": "93838",
+       "price": "4.99"
+   },
+   {
+       "title": "Product #2",
+       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+       "id": "92854",
+       "price": "12.99"
+   },
+   {
+       "title": "Product #3",
+       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+       "id": "93858",
+       "price": "42.95"
+   },
+   {
+       "title": "Product #4",
+       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+       "id": "15730",
+       "price": "2.99"
+   }
+]
