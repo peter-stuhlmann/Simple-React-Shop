@@ -5,7 +5,7 @@ export default class MainNavigation extends Component {
 
   render() {
     return (
-      <nav>
+      <nav className="main-navigation">
         <ul>
           <li><NavLink activeClassName="selected" exact to="/">Products</NavLink></li>
           <li><NavLink activeClassName="selected" exact to="/cart">Shopping Cart</NavLink></li>
