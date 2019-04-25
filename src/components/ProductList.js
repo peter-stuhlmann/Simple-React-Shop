@@ -4,12 +4,20 @@ export default class ProductList extends Component {
 
   selectProductAmount = (stock) => {
     let productStock = []
-
-    // Outer loop to create parent
     for (let i = 0; i <= stock; i++) {
       productStock.push(<option value={i}>{i}</option>)
     }
     return productStock
+  }
+
+  productAvailability = (stock) => {
+    let lowAvailability = ""
+    if (stock <= 5) {
+      lowAvailability = <p className="product-availability-low">Only {stock} left in stock - order soon.</p>
+    } else {
+      lowAvailability = <p className="product-availability-high">In Stock.</p>
+    }
+    return lowAvailability
   }
 
   render() {
@@ -22,6 +30,7 @@ export default class ProductList extends Component {
               <div className="product-preview"><img src={item.preview} /></div>
               <p className="product-description">{item.description}</p>
               <span className="product-price">€ {item.price}</span><br />
+              {this.productAvailability(item.stock)}
               <select>
                 {this.selectProductAmount(item.stock)}
               </select>
