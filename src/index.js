@@ -10,20 +10,22 @@ import LegalNotice from './components/LegalNotice';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import NotFound from './components/NotFound';
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <Router>
         
         <Header />
 
-        <Switch>
-          <Route exact path="/" component={ Products } />
-          <Route path="/cart" component={ ShoppingCart } />
-          <Route path="/legalnotice" component={ LegalNotice } />
-          <Route path="/privacypolicy" component={ PrivacyPolicy } />
-          <Route component={ NotFound } />
-        </Switch>
+        <main>
+          <Switch>
+            <Route exact path="/" component={ Products } />
+            <Route path="/cart" component={ ShoppingCart } />
+            <Route path="/legalnotice" component={ LegalNotice } />
+            <Route path="/privacypolicy" component={ PrivacyPolicy } />
+            <Route component={ NotFound } />
+          </Switch>
+        </main>
 
         <Footer />
 
