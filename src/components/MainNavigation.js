@@ -7,8 +7,8 @@ export default class MainNavigation extends Component {
     return (
       <nav className="main-navigation">
         <ul>
-          <li><NavLink activeClassName="selected" exact to="/">Products</NavLink></li>
-          <li><NavLink activeClassName="selected" exact to="/cart">Shopping Cart</NavLink></li>
+          <li><NavLink activeClassName="selected" exact to="/"><span className="fas fa-th">&nbsp;</span>Products</NavLink></li>
+          <li><NavLink activeClassName="selected" exact to="/cart"><span className="fas fa-shopping-cart">&nbsp;</span>Shopping Cart</NavLink></li>
         </ul>
       </nav>
     );
