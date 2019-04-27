@@ -11,6 +11,24 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import NotFound from './components/NotFound';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      items: []
+    }
+  }
+
+  componentDidMount() {
+    fetch('ProductCatalog.json')
+      .then(response => response.json())
+      .then(product => this.setState(state => state.items = product))
+  }
+
+  handleClick = (event) => {
+    console.log('Click')
+  }
+
   render() {
     return (
       <Router>
@@ -19,7 +37,7 @@ class App extends Component {
 
         <main>
           <Switch>
-            <Route exact path="/" component={ Products } />
+            <Route exact path="/" render={(props) => <Products {...props} items={this.state.items} handleClick={this.handleClick} />} />
             <Route path="/cart" component={ ShoppingCart } />
             <Route path="/legalnotice" component={ LegalNotice } />
             <Route path="/privacypolicy" component={ PrivacyPolicy } />
