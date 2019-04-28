@@ -14,6 +14,10 @@ class App extends Component {
 
   constructor(props) {
     super()
+
+    this.localStorage = JSON.parse(localStorage.getItem('shoppingcart'))
+    this.shoppingcart = (this.localStorage !== null ? this.localStorage : {})
+
     this.state = {
       items: {},
       cart: {}
@@ -23,7 +27,17 @@ class App extends Component {
   componentDidMount() {
     fetch('ProductCatalog.json')
       .then(response => response.json())
-      .then(product => this.setState(state => state.items = product))
+      .then(product => {
+        this.setState(state => {
+          state.items = product;
+          state.cart = this.shoppingcart;
+          return state;
+        });
+      });
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem("shoppingcart", JSON.stringify(this.state.cart))
   }
 
   handleClick = (productId, amount) => {
