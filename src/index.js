@@ -13,9 +13,10 @@ import NotFound from './components/NotFound';
 class App extends Component {
 
   constructor(props) {
-    super(props)
+    super()
     this.state = {
-      items: []
+      items: {},
+      cart: {}
     }
   }
 
@@ -25,9 +26,47 @@ class App extends Component {
       .then(product => this.setState(state => state.items = product))
   }
 
-  handleClick = (event) => {
-    console.log('Click')
+  handleClick = (productId, amount) => {
+    console.log(productId, amount)
+
+    if (amount < 1 || Number.isNaN(Number(amount))) {
+        return;
+    }
+
+    if (productId in this.state.cart) {
+        this.setState(state => {
+            state.cart[productId] += amount;
+            console.log(state)
+            return state;
+        });
+    } else {
+        this.setState(state => {
+            state.cart[productId] = amount;
+            return state;
+        });
+    }  
   }
+
+  increaseProductAmount = productId => {
+    this.setState(state => {
+      state.cart[productId]++;
+      return state;
+    });
+  };
+
+  decreaseProductAmount = productId => {
+    if (this.state.cart[productId] > 1) {
+      this.setState(state => {
+        state.cart[productId]--;
+        return state;
+      });
+    } else {
+      this.setState(state => {
+        delete state.cart[productId];
+        return state;
+      });
+    }
+  };
 
   render() {
     return (
@@ -38,7 +77,7 @@ class App extends Component {
         <main>
           <Switch>
             <Route exact path="/" render={(props) => <Products {...props} items={this.state.items} handleClick={this.handleClick} />} />
-            <Route path="/cart" component={ ShoppingCart } />
+            <Route path="/cart" render={(props) => <ShoppingCart {...props} cart={this.state.cart} items={this.state.items} increaseProductAmount={this.increaseProductAmount} decreaseProductAmount={this.decreaseProductAmount} />} />
             <Route path="/legalnotice" component={ LegalNotice } />
             <Route path="/privacypolicy" component={ PrivacyPolicy } />
             <Route component={ NotFound } />

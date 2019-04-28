@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 export default class ProductList extends Component {
 
+  inputAmount = React.createRef();
+
   selectProductAmount = (stock) => {
     let productStock = []
     for (let i = 0; i <= stock; i++) {
@@ -48,24 +50,18 @@ export default class ProductList extends Component {
 
   render() {
     return (
-      <ul className="product-list">
-        {this.props.items.map(
-          item => (
-            <li key={item.id} className="product-item">
-              <span className="product-title">{item.title}</span>
-              <div className="product-preview"><img src={item.preview} /></div>
-              <span className="product-rating">{this.productRating(item.rating)}</span>
-              <p className="product-description">{item.description}</p>
-              <span className="product-price">€ {item.price}</span><br />
-              {this.productAvailability(item.stock)}
-              <select>
-                {this.selectProductAmount(item.stock)}
-              </select>
-              <button type="button" className="submit" id={item.id} aria-label="Submit" onClick={this.props.handleClick}><span className="fas fa-cart-plus">&nbsp;</span>Add to cart</button>
+            <li key={this.props.items.id} className="product-item">
+              <span className="product-title">{this.props.items.title}</span>
+              <div className="product-preview"><img src={this.props.items.preview} /></div>
+              <span className="product-rating">{this.productRating(this.props.items.rating)}</span>
+              <p className="product-description">{this.props.items.description}</p>
+              <span className="product-price">€ {this.props.items.price}</span><br />
+              {this.productAvailability(this.props.items.stock)}
+              <select ref={this.inputAmount} defaultValue="0" onChange={()=> console.log(this.select)}>
+                {this.selectProductAmount(this.props.items.stock)}
+              </select> 
+              <button type="button" className="submit" aria-label="Submit" onClick={() => { this.props.handleClick( this.props.items.id, Number(this.inputAmount.current.value)); }}><span className="fas fa-cart-plus">&nbsp;</span>Add to cart</button>
             </li >
-          )
-        )}
-      </ul>
     )
   }
 }
