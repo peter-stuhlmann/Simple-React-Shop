@@ -50,18 +50,18 @@ export default class ProductList extends Component {
 
   render() {
     return (
-            <li key={this.props.items.id} className="product-item">
-              <span className="product-title">{this.props.items.title}</span>
-              <div className="product-preview"><img src={this.props.items.preview} /></div>
-              <span className="product-rating">{this.productRating(this.props.items.rating)}</span>
-              <p className="product-description">{this.props.items.description}</p>
-              <span className="product-price">€ {this.props.items.price}</span><br />
-              {this.productAvailability(this.props.items.stock)}
-              <select ref={this.inputAmount} defaultValue="0" onChange={()=> console.log(this.select)}>
-                {this.selectProductAmount(this.props.items.stock)}
-              </select> 
-              <button type="button" className="submit" aria-label="Submit" onClick={() => { this.props.handleClick( this.props.items.id, Number(this.inputAmount.current.value)); }}><span className="fas fa-cart-plus">&nbsp;</span>Add to cart</button>
-            </li >
+      <li key={this.props.items.id} className="product-item">
+        <span className="product-title">{this.props.items.title}</span>
+        <div className="product-preview"><img src={this.props.items.preview} alt={this.props.items.title} /></div>
+        <span className="product-rating">{this.productRating(this.props.items.rating)}</span>
+        <p className="product-description">{this.props.items.description}</p>
+        <span className="product-price">€ {this.props.items.price}</span><br />
+        {this.productAvailability(this.props.items.stock)}
+        <select ref={this.inputAmount} defaultValue="0" onChange={()=> console.log(this.select)}>
+          {this.selectProductAmount(this.props.items.stock)}
+        </select> 
+        <button type="button" className="submit" aria-label="Submit" onClick={() => { this.props.handleClick( this.props.items.id, Number(this.inputAmount.current.value)); }}><span className="fas fa-cart-plus">&nbsp;</span>Add to cart</button>
+      </li >
     )
   }
 }
