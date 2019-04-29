@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MetaTags from 'react-meta-tags';
 import ShoppingCartItem from "./ShoppingCartItem";
 import { calculateTotal } from "../helpers/helper"
 
@@ -10,6 +11,13 @@ export default class ShoppingCart extends Component {
 
     return (
       <React.Fragment>
+
+        <MetaTags>
+          <title>Shopping cart | Simple React Shop</title>
+          <link rel="shortcut icon" type="image/png" href={require("../assets/img/favicon.png")} sizes="96x96" />
+          <meta name="description" content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua." />
+        </MetaTags>
+
         <h1>Shopping Cart</h1>
 
         {itemCount === 0 && <p>Your Shopping Cart is empty.</p>}
