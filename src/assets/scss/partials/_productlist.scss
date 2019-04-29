@@ -1,0 +1,74 @@
+.product-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 0;
+
+    .product-item {
+        list-style-type: none;
+        margin-bottom: $margin;
+        padding: $padding;
+        box-sizing: border-box;
+        box-shadow: $boxShadow;
+        flex: 0 0 24%;
+        
+        .product-title {
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        .product-preview {
+            margin-top: $margin;
+
+            img {
+                width: 100%
+            }
+        }
+
+        .product-price {
+            color: red;
+            font-size: 1.2em
+        }
+
+        .product-rating {
+            color: orange;
+        }
+
+        .product-availability-low {
+            font-size: 0.85em;
+            color: red;
+            margin: 0
+        }
+
+        .product-availability-high {
+            font-size: 0.85em;
+            color: green;
+            margin: 0
+        }
+
+        select {
+            border-color: #846A29;
+            border-radius: 4px;
+            padding: calc(#{$padding} / 3);
+            outline: 0;
+            width: 100px;
+            margin-top: $margin
+        }
+
+        button {
+            border: 1px solid #846A29;;
+            background-color: $quaternaryColor;
+            padding: calc(#{$padding} / 3) calc(#{$padding} / 2);
+            margin: $margin 0 0 calc(#{$margin} / 3); 
+            border-radius: $borderRadius;
+            float: right;
+            outline: 0;
+            transition: $transition;
+            width: 100px;
+
+            &:hover {
+                background-color: #DE993F
+            }
+        }
+    }
+}
