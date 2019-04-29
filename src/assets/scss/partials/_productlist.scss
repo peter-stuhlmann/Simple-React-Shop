@@ -26,23 +26,27 @@
         }
 
         .product-price {
-            color: red;
+            color: #C70000;
             font-size: 1.2em
         }
 
         .product-rating {
-            color: orange;
-        }
+            color: #DC9514;
 
+            em {
+                color: #292929
+            }
+        }
+        
         .product-availability-low {
             font-size: 0.85em;
-            color: red;
+            color: #C70000;
             margin: 0
         }
 
         .product-availability-high {
             font-size: 0.85em;
-            color: green;
+            color: #005600;
             margin: 0
         }
 
