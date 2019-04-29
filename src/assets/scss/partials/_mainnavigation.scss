@@ -1,0 +1,22 @@
+.main-navigation {
+    margin-top: 24px;
+
+    ul {
+        margin: 0 $margin;
+
+        li {
+            list-style-type: none;
+            display: inline-block;
+            margin-left: calc(#{$margin} * 2);
+            
+            a {
+                text-decoration: none;
+                color: $secondaryColor
+            }
+
+            .selected {
+                font-weight: bold
+            }
+        }
+    }
+}
