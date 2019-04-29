@@ -1,0 +1,44 @@
+footer {
+    background-color: $tertiaryColor;
+    color: $secondaryColor;
+    font-size: 0.85em;
+    width: 100%;
+
+    & > div {
+        width: 100%;
+        max-width: $desktop;
+        padding: 0 $padding;
+        margin: 0 auto;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+    
+        p {
+            flex: 0 0 50%
+        }
+
+        nav {
+            text-align: right;
+            float: right;
+            flex: 0 0 50%;
+
+            li {
+                display: inline;
+                font-size: 1em;
+                margin-left: calc(#{$margin} * 1.7);
+                white-space: nowrap
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $secondaryColor;
+            transition: 0.3s ease all;
+
+            &:hover {
+                opacity: 0.8
+            }
+        }
+    }
+}
