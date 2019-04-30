@@ -11,9 +11,9 @@ export default class ShoppingCartItem extends Component {
       <tr>
         <td><img src={product.preview} alt={product.title} /></td>
         <td>
-          {product.title}<br />
-          {product.stock}<br />
-          {product.shipping}
+          <span className="product-title">{product.title}</span><br />
+          <span className="product-stock">{product.stock} products in stock.</span><br />
+          <span className="product-shipping">{product.shipping}</span>
         </td>
         <td>€ {product.price}</td>
         <td>€ {round(product.price * this.props.amount, 2)}</td>

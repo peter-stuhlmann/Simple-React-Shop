@@ -1,0 +1,44 @@
+table {
+    width: 100%;
+
+    tr {
+        th {
+            text-align: left;
+            border-bottom: 1px solid black;
+            padding: $padding 0;
+
+            &:first-child {
+                width: 170px;
+            }
+
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5) {
+                width: 100px;
+            }
+        }
+
+        td {
+            vertical-align: top;
+            padding: $padding 0;
+
+            &:first-child {
+
+                img {
+                    width: 150px
+                }
+            }
+
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5) {
+                width: 100px;
+            }
+
+            .product-title {
+                font-weight: bold;
+                font-size: 1.2em
+            }
+        }
+    }
+}
