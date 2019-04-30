@@ -26,10 +26,11 @@ export default class ShoppingCart extends Component {
           <table>
             <thead>
               <tr>
-                <th>Amount</th>
+                <th>&nbsp;</th>
                 <th>Name</th>
                 <th>Price</th>
                 <th>Total</th>
+                <th>Amount</th>
                 <th>Update</th>
               </tr>
             </thead>
@@ -44,10 +45,10 @@ export default class ShoppingCart extends Component {
                 />
               ))}
               <tr>
-                <td colSpan="5">&nbsp;</td>
+                <td colSpan="6">&nbsp;</td>
               </tr>
               <tr>
-                <td colSpan="3">&nbsp;</td>
+                <td colSpan="4">&nbsp;</td>
                 <td>
                   <strong>Total</strong>
                 </td>
