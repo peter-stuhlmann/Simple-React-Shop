@@ -62,10 +62,14 @@ class App extends Component {
   }
 
   increaseProductAmount = productId => {
-    this.setState(state => {
-      state.cart[productId]++;
-      return state;
-    });
+    if (this.state.cart[productId] < this.state.items[productId].stock) {
+      this.setState(state => {
+        state.cart[productId]++;
+        return state;
+      });
+    } else {
+      console.log('No more products in stock.')
+    }
   };
 
   decreaseProductAmount = productId => {
