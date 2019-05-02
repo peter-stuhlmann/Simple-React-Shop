@@ -18,7 +18,7 @@ export default class ShoppingCart extends Component {
           <meta name="description" content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua." />
         </MetaTags>
 
-        <h1>Shopping Cart</h1>
+        <h1>Shopping Cart ({ itemCount })</h1>
 
         {itemCount === 0 && <p>Your Shopping Cart is empty.</p>}
 

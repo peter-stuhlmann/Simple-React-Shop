@@ -90,7 +90,7 @@ class App extends Component {
     return (
       <Router>
         
-        <Header />
+        <Header cart={this.state.cart} />
 
         <main>
           <Switch>

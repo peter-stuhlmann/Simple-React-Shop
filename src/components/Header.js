@@ -8,7 +8,7 @@ export default class Header extends Component {
         <header>
           <section>
             <span className="shop-title">Simple React Shop</span>
-            <MainNavigation />
+            <MainNavigation cart={this.props.cart} />
           </section>
         </header>
       </React.Fragment>
